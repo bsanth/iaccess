@@ -1,0 +1,235 @@
+function qsContains(str) {
+	var uri = "" + document.location;
+	if (uri.indexOf("?")>0 && uri.indexOf(str,uri.indexOf("?")) > 0 ) {
+		return true;
+	}
+	return false;
+}
+
+var navigation = { "links":null,"current":0 };
+var content = { "items":null,"current":0 };
+var toc = { "items":null,"current":0 };
+var iaccessFocus = "";
+
+$(document).ready(function() {
+
+	// is iAccess on?
+	var isOn = qsContains("iaccess");
+
+
+	if ( isOn ) {
+		// Add iaccess class to body element
+		$("body").addClass("iaccess");
+	
+		// Set up keyboard shortcuts
+		shortcut.add("Right",function() {
+			readNext();
+		});
+		shortcut.add("Left",function() {
+			readPrevious();
+		});
+		shortcut.add("Up",function() {
+			readTOC(0);
+		});
+		shortcut.add("Down",function() {
+			select(0);
+		});
+		shortcut.add("Space",function() {
+			voiceCommand(0);
+		});
+
+		iaccessFocus = "toc";
+
+		// Get navigation links
+		navigation.links = $("nav a");
+		// Get content
+		content.items = $("h1,h2,h3,h4,h5,h6,p,li").not("nav h1,nav h2, nav h3, nav h4, nav h5, nav h6, nav p, nav li");
+		// Add tabindex so elements can receive focus
+		for ( var i = 0; i < content.items.length; i++ ) {
+			content.items.eq(i).attr("tabindex",i+1);
+		}
+		
+		// Create Table-of-Contents
+		toc = $('<nav id="toc"></nav>');
+		var tocTitle = $("title").html();
+		toc.append('<p tabindex="1">' + tocTitle + ': Table of Contents:</p>');
+		var tocList = $('<ul></ul>');
+		tocList.append('<li><a href="#navigation" onclick="readNavigation(0); return false;">Navigation</a> ' + navigation.links.length + ' Links</li>');
+		tocList.append('<li><a href="#content" onclick="readContent(0); return false;">Content</a></li>');
+		toc.append(tocList);
+		
+		
+		$("body *").eq(0).before(toc);
+		// Get the newly-added Table of Contents items
+		toc.items = $("#toc p, #toc li");
+		// Start reading TOC
+		readTOC(0);
+	}	
+});
+
+
+function readTOC(n) {
+	iaccessFocus="toc";
+	$("*").removeClass("active");
+	if ( n === toc.items.length ) {
+		// End of content
+		// We should signify this somehow?
+	}
+	if ( n > toc.items.length ) {
+		n = 0;
+	}
+	if ( n < 0 ) {
+		n = toc.items.length-1;
+	}
+	toc.current=n;
+	// Read current item
+	toc.items.eq(n).addClass("active").focus();	
+	
+	if(n==1)
+	{
+		document.getElementById("voiceDiv").innerHTML="<EMBED runat='server' src='http://translate.google.com/translate_tts?tl=en&q=navigation+"+ navigation.links.length +"+links' hidden='true' volume='100' loop='FALSE' autostart='true'></EMBED>";
+	}
+	else if(n==2)
+	{
+		document.getElementById("voiceDiv").innerHTML="<EMBED runat='server' src='http://translate.google.com/translate_tts?tl=en&q=Content' hidden='true' volume='100' loop='FALSE' autostart='true'></EMBED>";
+	}
+	else
+	{
+		document.getElementById("voiceDiv").innerHTML="<EMBED runat='server' src='http://translate.google.com/translate_tts?tl=en&q="+toc.items.eq(n).html()+"' hidden='true' volume='100' loop='FALSE' autostart='true'></EMBED>";
+	}
+	// Read next item???
+}
+
+function readNavigation(n) {
+	iaccessFocus="navigation";
+	$("*").removeClass("active");
+	if ( n === navigation.links.length ) {
+		// End of content
+		// We should signify this somehow
+	}
+	if ( n > navigation.links.length ) {
+		n = 0;
+	}
+	if ( n < 0 ) {
+		n = navigation.links.length-1;
+	}
+	navigation.current=n;
+	
+	navigation.links.eq(n).addClass("active").focus();
+	
+	document.getElementById("voiceDiv").innerHTML="<EMBED runat='server' src='http://translate.google.com/translate_tts?tl=en&q=link+"+navigation.links.eq(n).text()+"' hidden='true' volume='100' loop='FALSE' autostart='true'></EMBED>";
+
+	
+	// Read next item???
+}
+
+function readContent(n) {
+	iaccessFocus="content";
+	$("*").removeClass("active");
+	if ( n === content.items.length ) {
+		// End of content
+	}
+	if ( n > content.items.length ) {
+		n = 0;
+	}
+	content.current=n;
+	// Read current item
+	content.items.eq(n).addClass("active").focus();
+
+	// Treat search results as a special case
+	var textToRead = "";
+	if ( content.items.eq(n).parent().attr("id") == "searchResults" ) {
+		var childContents = content.items.eq(n).find(".title, .domain");
+		for ( var i = 0; i < childContents.length; i++ ) {
+			textToRead += childContents.eq(i).text() + " ";
+		}
+	} else {
+		textToRead = content.items.eq(n).text();
+	}
+
+	//alert('<iframe id="voiceFrame" style="display:none" src="http://translate.google.com/translate_tts?tl=en&q='+content.items.eq(n).html()+'" width="0px" height="0px"></iframe>');
+
+	//document.getElementById("voiceDiv").innerHTML+='<iframe id="voiceFrame" style="display:none" src="http://api.ispeech.org/api/rest?apikey=94cba689106f7a05f4457c56d1f295c2&action=convert&voice=usenglishfemale&text='+content.items.eq(n).html()+'" width="0px" height="0px"></iframe>';
+	content.items.eq(n).addClass("active").focus();
+	document.getElementById("voiceDiv").innerHTML="<EMBED runat='server' src='http://translate.google.com/translate_tts?tl=en&q=" + textToRead + "' hidden='true' volume='100' loop='FALSE' autostart='true'></EMBED>";
+
+
+	// Read next item???
+}
+
+function readNext() {
+	$("#voiceFrame").remove();
+	if (iaccessFocus==="navigation") {
+		navigation.current++;
+		readNavigation(navigation.current);
+		return;
+	}
+	if (iaccessFocus==="content") {
+		content.current++;
+		readContent(content.current);
+		return;
+	}
+	if (iaccessFocus==="toc") {
+		readTOC(toc.current+1);
+		return;
+	}
+}
+
+function readPrevious() {
+	if (iaccessFocus==="navigation") {
+		navigation.current--;
+		readNavigation(navigation.current);
+		return;
+	}
+	if (iaccessFocus==="content") {
+		content.current--;
+		readContent(content.current);
+		return;
+	}
+	if (iaccessFocus==="toc") {
+		readTOC(toc.current-1);
+		return;
+	}
+}
+
+function select() {
+	var link = null;
+	if ( iaccessFocus==="navigation" ) {
+		link = navigation.links.eq(navigation.current);
+	}
+	if ( iaccessFocus==="content" ) {
+		link = content.items.eq(content.current).find("a");
+	}
+	if ( iaccessFocus==="toc" ) {
+		link = toc.items.eq(toc.current).find("a");
+		if ( link.attr("onclick") ) {
+			link.click();
+			return;
+		}
+	}
+
+	if ( link.length > 0 ) {
+		link = link.eq(0);
+	} else {
+		// TODO read the error aloud
+		alert("Select command not available");
+		return;
+	}
+	
+	var linkAnnouncement = link.text() + " " + link.attr("href").split("/")[2];
+	//alert("<EMBED runat='server' src='http://translate.google.com/translate_tts?tl=en&q=redirecting+to+"+link.text()+ "+" + link.attr("href").split("/")[2] + "' hidden='true' volume='100' loop='FALSE' autostart='true'></EMBED>");
+
+	setTimeout(function(){document.location=link.attr("href");}, 5000)
+
+	document.getElementById("voiceDiv").innerHTML="<EMBED runat='server' src='http://translate.google.com/translate_tts?tl=en&q=redirecting+to+"+link.text()+"' hidden='true' volume='100' loop='FALSE' autostart='true'></EMBED>";
+	
+	// TODO read the text aloud
+	/*if ( confirm(linkAnnouncement) ) {
+		document.location = link.attr("href");
+	}*/
+}
+
+// TODO voiceCommand
+function voiceCommand() {
+	alert("Voice Command");
+}

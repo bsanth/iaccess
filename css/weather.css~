@@ -1,0 +1,45 @@
+html { background-color:#194DB4 }
+body { background-color:white; font-family:arial,sans-serif; margin:0 auto; padding:1em 2em;  width:980px; }
+nav#site { position:relative }
+nav#site ul.active, li.active { background-color:#00163F }
+nav#site ul { margin:0; padding:0; background-color:#194DB4 }
+nav#site ul li { display:inline; line-height:1.8em; padding:.5em 1em; position:relative; } 
+nav#site ul li a { color:#fff; text-decoration:none; } 
+nav#site ul li a:hover { text-decoration:underline; } 
+nav#site ul li ul { background-color:blue; position:relative; top:100px; } 
+
+#temperature { background-color:#00163F; color:white; padding:.5em 1em; }
+section#left { float:left; width:150px; }
+section#right { margin-left:175px; }
+
+nav#forecasts { margin-top:1em; }
+nav#forecasts ul { border:1px gray solid; list-style:none; margin:0; padding:0; }
+
+nav#forecasts ul a { border-bottom:1px gray solid; color:#194DB4; display:block; font-weight:bold; font-size:small; padding:.5em .5em; text-decoration:none; }
+nav#forecasts ul a:hover { background-color:#194DB4; color:white }
+
+#radar { background-image:url(map.png); background-repeat:no-repeat; background-position:left; }
+
+footer { background-color:#cdf; color:#00163F; font-size:small; padding:1em; }
+footer nav div { float:left; width:190px; }
+footer nav ul { margin:0; padding:0; }
+footer nav div ul li { display:block; padding:0; width:150px; }
+footer nav p { clear:both; padding-top:2em; }
+footer nav ul li { display:inline; padding:.5em 1em 0em 0em; }
+footer nav ul li a { color:#00163F;}
+
+body.iaccess .content { background-color:#ffe; color:#000; }
+body.iaccess .active, body.iaccess nav#site ul li  a.active { background-color:#ff0; color:#000; }
+body.iaccess #toc { background-color:#fff; border:4px solid #999; color:#000; font-family:arial,sans-serif; font-size:1.5em; margin:1em auto; padding:1em; width:320px; }
+
+
+
+
+
+
+
+
+#voiceDiv
+{
+	display:none;
+}

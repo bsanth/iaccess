@@ -1,0 +1,58 @@
+}
+body { background-color:white; font-family:arial,sans-serif; margin:0 auto; padding:1em 2em;  width:980px; }
+
+nav#site{ position:relative; top:0px; left:0px; width:100%;}
+nav#site ul.active, li.active { color:#FFFFFF; }
+nav#site ul { margin:0; padding:0; background-color:#000000; }
+nav#site ul li { display:inline; line-height:1.8em; padding:.5em 1em; position:relative; } 
+nav#site ul li a { font-weight:bold; color:#ccc; text-decoration:none; } 
+nav#site ul li a:hover { text-decoration:underline; } 
+nav#site ul li ul { background-color:blue; position:relative; top:100px; } 
+
+#temperature { background-color:#00163F; color:white; padding:.5em 1em; }
+section#left { float:left; width:150px; }
+section#right { margin-left:175px; }
+
+nav#forecasts { margin-top:1em; }
+nav#forecasts ul { border:1px gray solid; list-style:none; margin:0; padding:0; }
+
+nav#forecasts ul a { border-bottom:1px gray solid; color:#194DB4; display:block; font-weight:bold; font-size:small; padding:.5em .5em; text-decoration:none; }
+nav#forecasts ul a:hover { background-color:#194DB4; color:white }
+
+#radar { background-image:url(map.png); background-repeat:no-repeat; background-position:left; }
+
+
+body.iaccess .content { background-color:#FFF; color:#000; }
+body.iaccess .active, body.iaccess nav#siteul li  a.active { background-color:#FFF; color:#000; }
+body.iaccess #toc { background-color:#fff; border:4px solid #999; color:#000; font-family:arial,sans-serif; font-size:1.5em; margin:1em auto; padding:1em; width:320px; }
+
+#search
+{
+	width:40%;
+	font-size:18pt;
+}
+
+#searchButton
+{
+	font-size:16pt;
+}
+
+li
+{
+	list-style-type: none;
+}
+
+nav#sidebar ul.active, li.active { color:#CC0000; }
+nav#sidebar ul { margin:0; padding:0; }
+nav#sidebar ul li {  } 
+nav#sidebar ul li a { font-size:16pt; color:#000000; text-decoration:none; } 
+nav#sidebar ul li a:hover { text-decoration:underline; } 
+
+
+nav#pages a { font-size:16pt; color:blue; } 
+
+
+p, a
+{
+	font-size:14pt;
+}

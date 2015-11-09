@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>19102 Weather, Current Conditions and temperature - weather.com</title>
+<link href="css/weather.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/shortcut.js"></script>
+<script type="text/javascript" src="js/iaccess.js"></script>
+</head>
+<body>
+<div id="voiceDiv"></div>
+
+<nav id="site" title="Site Navigation">
+<p><img src="images/TWC_logo_84x84.gif" width="84" height="84" alt="The Weather Channel"></p>
+<ul>
+<li class="active"><a href="http://www.weather.com/weather/right-now/">Weather</a></li>
+<li><a href="http://www.weather.com/life/">Lifestyle</a></li>
+<li><a href="http://www.weather.com/social/national">Social</a></li>
+<li><a href="http://www.weather.com/outlook/weather-news/news/articles/weather-maps_2012-01-13">Maps</a></li>
+<li><a href="http://www.weather.com/weather/videos/news-41/-/-/">Video</a></li>
+<li><a href="http://www.weather.com/newscenter/">News</a></li>
+<li><a href="http://www.weather.com/tv/">TV</a></li>
+</ul>
+
+<ul class="active">
+<li><a href="http://www.weather.com/weather/right-now/">Local</a></li>
+<li><a href="http://www.weather.com/newscenter/nationalforecast/">National Forecast</a></li>
+<li><a href="http://www.weather.com/news/weather-severe/severe-weather-tracker">Severe Weather</a></li>
+<li><a href="http://www.weather.com/newscenter/alerts/national/severeWxAlertsNational.html">Alerts</a></li>
+<li><a href="http://www.weather.com/weather/hurricanecentral/">Hurricane Central</a></li>
+<li><a href="http://www.weather.com/life/safety/">Safety &amp; Preparedness</a></li>
+<li><a href="http://www.weather.com/outdoors/agriculture/forecast/">Farming</a></li>
+</ul>
+</nav>
+
+<h1>Philadelphia, PA (19102) Weather</h1>
+
+<section id="left">
+	<article id="temperature">
+		<h2>78&deg; F</h2>
+		<p>Partly cloudy</p>
+		<p>Feels like 78&deg; F</p>
+	</article>
+
+<nav id="forecasts" title="Forecast Navigation">
+<ul>
+    <li><a href="http://www.weather.com/weather/right-now/Philadelphia+PA+19102:4:US">Right Now</a></li>
+    <li><a href="http://www.weather.com/weather/today/Philadelphia+PA+19102:4:US">Today</a></li>
+    <li><a href="http://www.weather.com/weather/hourbyhour/graph/Philadelphia+PA+19102:4:US">Hourly</a></li>
+    <li><a href="http://www.weather.com/weather/tomorrow/Philadelphia+PA+19102:4:US">Tomorrow</a></li>
+    <li><a href="http://www.weather.com/weather/weekend/Philadelphia+PA+19102:4:US">Weekend</a></li>
+    <li><a href="http://www.weather.com/weather/5-day/Philadelphia+PA+19102:4:US">5 Day</a></li>
+    <li><a href="http://www.weather.com/weather/tenday/Philadelphia+PA+19102:4:US">10 Day</a></li>
+    <li><a href="http://www.weather.com/weather/monthly/19102">Monthly</a></li>
+    <li><a href="http://www.weather.com/weather/map/interactive/Philadelphia+PA+19102:4:US">Map</a></li>
+</ul>
+
+<h2>Forecasts</h2>
+<ul>
+
+    <li><a href="http://www.weather.com/outlook/recreation/boatandbeach/weather/tenday/19102">Boat & Beach</a></li>
+    <li><a href="http://www.weather.com/outlook/recreation/outdoors/fishing/19102">Fishing</a></li>
+    <li><a href="http://www.weather.com/outlook/homeandgarden/home/picnic/planner/19102">Picnic & Grilling</a></li>
+    <li><a href="http://www.weather.com/outlook/health/allergies/weather/19102">Pollen</a></li>
+   	<li><a href="http://www.weather.com/activities/travel/businesstraveler/index.html">Travel</a></li>
+</ul>
+
+<p>Take the weather with me:</p>
+<ul>
+<li><a href="">Desktop</a></li>
+<li><a href="">Mobile</a></li>
+<li><a href="">Tablet</a></li>
+</ul>
+
+</nav>
+
+</section>
+
+<section id="right">
+
+<article>
+<h2>Right Now</h2>
+<p>Updated: Jul 31, 2012, 9:25pm EDT</p>
+<ul>
+<li><strong>Wind:</strong> From S 8 mph</li>
+<li><strong>Humidity:</strong> 74%</li>
+<li><strong>Dew Point:</strong> 69&deg;</li>
+<li><strong>Visibility:</strong> 10.0 mi</li>
+<li><strong>Pressure:</strong> 29.94 in</li>
+<li><strong>UV Index:</strong> 0 - Low</li>
+</ul>
+<p>(Humidity becomes more noticeable as the dew point rises above 60&deg;F. Readings above 75&deg;F can feel stifling.)</p>
+</article>
+
+<article>
+<h2>Next 6 Hours</h2>
+<p>Partly cloudy with temperatures steady in the low 70s. Winds light and variable. <a href="http://www.weather.com/weather/hourbyhour/graph/Philadelphia+PA+19102:4:US">Hourly Details</a></p>
+<p><a href="http://www.weather.com/weather/today/19102">Today's Forecast</a></p>
+</article>
+
+<h2>Stories That Affect Me</h2>
+<p>
+	<a href="http://www.weather.com/article/meteorological-images-july2012-20120731"><img src="images/4lows_fabiomoisture_155x114.jpg" alt="Meteorological Images of July 2012"></a><br>
+	<a href="http://www.weather.com/article/meteorological-images-july2012-20120731">Meteorological Images of July 2012</a>
+</p>
+
+<p>
+	<a href="http://www.weather.com/article/drought-disaster-photos-20120713"><img src="images/corncrop2_155x155.jpg" alt="Photos: Drought Disaster 2012"></a><br>
+	<a href="http://www.weather.com/article/drought-disaster-photos-20120713">Photos: Drought Disaster 2012</a>
+</p>
+<p>More than half of the continental U.S. continues to be tested by a hot, dry summer. Here...</p>
+
+
+<p>
+
+
+<h2>Radar Map</h2>
+<p>Updated Jul 31, 2012, 9:30pm EDT</p>
+<p id="radar">
+<img src="images/03201010.png" alt="Radar Map">
+</p>
+
+
+</section>
+
+
+
+<footer>
+<nav id="footer" title="Company Information Navigation">
+	<div>
+		<h2>Company</h2>
+		<ul>
+		    <li><a href="http://www.weather.com/sitemap/">Sitemap</a></li>
+		    <li><a href="http://feedback.weather.com/knowledgebase">Support</a></li>
+		    <li><a href="http://feedback.weather.com/">Feedback</a></li>
+		    <li><a href="http://www.weather.com/careers/">Careers</a></li>
+		    <li><a href="http://www.weather.com/aboutus">About Us</a></li>
+		    <li><a href="http://www.weather.com/aboutus">Press Room</a></li>
+		    <li><a href="http://twcmediakit.com/">Advertising</a></li>
+		</ul>
+	</div>
+
+
+	<div>
+		<h2>Explore</h2>
+		<ul>
+		    <li><a href="http://www.weather.com/encyclopedia/">Storm Encyclopedia</a></li>
+		    <li><a href="http://www.weather.com/glossary/">Weather Glossary</a></li>
+		    <li><a href="http://www.weather.com/common/drilldown/US/top100.html">Top 100 U.S. Cities</a></li>
+		    <li><a href="http://www.weather.com/outlook/weatherbystate/">Search by State</a></li>
+		    <li><a href="http://www.weather.com/localguides/index.html">City Guides</a></li>
+		    <li><a href="http://www.weather.com/outlook/weather-news/severe-weather/articles/hurricane-main_2010-05-21">Hurricanes</a></li>
+		    <li><a href="http://www.weather.com/social/national">Top Social Weather Cities</a></li>
+		    <li><a href="http://www.weather.com/news/weather-tornado/tornado-torcon-index">TOR:CON </a></li>
+		</ul>
+	</div>
+
+	<div>
+		<h2>Partners</h2>
+		<ul>
+		    <li><a href="http://www.weather.com/outdoors/home-improvement/">The Home Depot Project of the Week</a></li>
+		    <li><a href="http://www.webmd.com/allergies/default.htm">WebMD Asthma & Allergy Center</a></li>
+		    <li><a href="http://www.godaddy.com/default.aspx?isc=gdweather2">Web Hosting at GoDaddy.com</a></li>
+		    <li><a href="http://www.huffingtonpost.com/">Breaking News</a></li>
+		</ul>
+	</div>
+	<div>
+	<h2>Our Products</h2>
+		<ul>
+		    <li><a href="http://www.weather.com/services/winapp.html">Desktop Weather</a></li>
+		    <li><a href="http://www.weather.com/mobile">Mobile Products</a></li>
+		    <li><a href="http://www.weather.com/services/">Weather Tools</a></li>
+		    <li><a href="http://www.weather.com/services/ie7.html">Toolbars</a></li>
+		    <li><a href="http://www.weather.com/services/screensaver/screensaver_email_lp.html">Screensavers</a></li>
+		    <li><a href="https://registration.weather.com/ursa/alerts/step1?initAlerts=SVR">Email/SMS Alerts</a></li>
+		    <li><a href="http://www.weather.com/services/notify.html">Notify! Voice Alerts</a></li>
+		</ul>
+	</div>
+	<div>
+		<h2>Social Media</h2>
+		<ul>
+		    <li><a href="https://www.facebook.com/TheWeatherChannel">Like us on Facebook</a></li>
+		    <li><a href="https://twitter.com/weatherchannel">Follow us on Twitter</a></li>
+		    <li><a href="https://plus.google.com/102191030161937606640/posts">Add us on Google+</a></li>
+		    <li><a href="http://www.youtube.com/user/TheWeatherChannel/">Watch us on YouTube</a></li>
+		    <li><a href="http://www.weather.com/services/mobilesplash.html">Weather on Mobile</a></li>
+		    <li><a href="http://www.weather.com/services/winapp.html">Download Desktop Weather</a></li>
+		</ul>
+	</div>
+
+	<p>&copy; 1995 - 2012, The Weather Channel, LLC weather.com&reg; Licensed by TRUSTe</p>
+	
+	<ul>
+	    <li><a href="http://www.weather.com/common/home/legal.html">Terms of Service</a></li>
+	    <li><a href="http://www.weather.com/common/home/privacy.html">Privacy Statement</a></li>
+	    <li><a href="http://www.controlyourtv.org/Intro.aspx">Parental Controls</a></li>
+	    <li><a href="http://www.weather.com/services/ad-choices.html">Ad Choices</a></li>
+	    <li><a href="http://www.exploregeorgia.org/">Georgia Org</a></li>
+	    <li><a href="http://www.weather.com/services/essential-accessibility.html?role=&alt=EssentialAccessibility">Accessibility</a></li>
+	</ul>
+
+</nav>
+</footer>
+
+</body>
+</html>
